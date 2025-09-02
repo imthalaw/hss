@@ -45,9 +45,9 @@ def check_file_hash(file_hash, api_key):
       print(f"  Scan Date: {scan_date}")
       print(f"  Detections: {positives} / {total}")
       if positives > 0:
-        print("   🚨 Result: File is concidered malicious by one or more vendors.")
+        print(f"   🚨 Result: '{filepath} File is concidered malicious by one or more vendors.")
       else:
-        print("   👍 Result: '{filepath}' File appears to be clean.")
+        print(f"   👍 Result: '{filepath}' File appears to be clean.")
     elif response["results"]["response_code"] == 0: # Hash not found
       print("❓ Analysis not found. The file may not have been scanned by VirusTotal before.")
     else:
